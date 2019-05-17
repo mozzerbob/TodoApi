@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace TodoApi.Controllers
 {
     [Route("api/[controller]")]
+    [ApiController]
     public class TodoController : Controller
     {
         // GET: api/<controller>
