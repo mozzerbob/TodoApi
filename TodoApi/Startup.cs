@@ -43,6 +43,7 @@ namespace TodoApi
                 app.UseHsts();
             }
 
+            app.UseDefaultFiles();
             app.UseHttpsRedirection();
             app.UseMvc();
         }
