@@ -13,6 +13,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using TodoApi.Models;
 using Swashbuckle.AspNetCore.Swagger;
+using System.Reflection;
+using System.IO;
 
 namespace TodoApi
 {
@@ -48,6 +50,10 @@ namespace TodoApi
                         Url = string.Empty
                     }
                 });
+
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
             });
         }
 
