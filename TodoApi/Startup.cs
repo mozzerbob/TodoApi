@@ -34,6 +34,7 @@ namespace TodoApi
         {
             services.AddDbContext<TodoContext>(opt => opt.UseInMemoryDatabase("TodoList"));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = apiName, Version = apiVersion });
@@ -53,6 +54,11 @@ namespace TodoApi
             {
                 app.UseHsts();
             }
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", apiName + " Version " + apiVersion);
+            });
 
             app.UseDefaultFiles();
             app.UseStaticFiles();
