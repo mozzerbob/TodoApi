@@ -28,7 +28,9 @@ namespace TodoApi.Controllers
                 _context.SaveChanges();
             }
         }
-
+        /// <summary>
+        /// Gets a todo item
+        /// </summary>
         // GET: api/Todo
         [HttpGet]
         public async Task<ActionResult<IEnumerable<TodoItem>>> GetTodoItems()
@@ -75,6 +77,9 @@ namespace TodoApi.Controllers
             return NoContent();  //like a null return
         }
 
+        /// <summary>
+        /// Deletes a specific TodoItem.
+        /// </summary>
         // DELETE: item x
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTodoItem(long id)
