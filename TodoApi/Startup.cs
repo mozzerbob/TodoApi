@@ -57,7 +57,7 @@ namespace TodoApi
 
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", apiName + " Version " + apiVersion);
+                c.SwaggerEndpoint("/swagger/" + apiVersion + "/swagger.json", apiName + " Version " + apiVersion);
             });
 
             app.UseDefaultFiles();
