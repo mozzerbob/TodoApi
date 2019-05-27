@@ -37,7 +37,17 @@ namespace TodoApi
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info { Title = apiName, Version = apiVersion });
+                c.SwaggerDoc(apiVersion, new Info {
+                    Title = apiName,
+                    Description = "A simple example ASP.NET Core Web API",
+                    Version = apiVersion,
+                    Contact = new Contact
+                    {
+                        Name = "Phil",
+                        Email = "morris.p1990@gmail.com",
+                        Url = string.Empty
+                    }
+                });
             });
         }
 
