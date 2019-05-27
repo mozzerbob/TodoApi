@@ -18,6 +18,10 @@ namespace TodoApi
 {
     public class Startup
     {
+
+        string apiVersion = "v1";
+        string apiName = "My TodoApi Noise";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
